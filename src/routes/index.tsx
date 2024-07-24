@@ -1,5 +1,6 @@
 import { DocumentHead } from '@builder.io/qwik-city'
 import { component$ } from '@builder.io/qwik'
+import { WindowComponent } from '~/components/window'
 
 export default component$(() => {
     return (
@@ -10,9 +11,11 @@ export default component$(() => {
                 <br />
                 Happy coding.
             </div>
+            <WindowComponent
+                title="Another Window"
+                body="Different content here."
+            />
             <div class="window-body">
-                <p>Hello, world!</p>
-
                 <menu role="tablist">
                     <li role="tab" aria-selected="true">
                         <a href="#tabs">Desktop</a>
