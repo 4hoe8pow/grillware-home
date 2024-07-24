@@ -4,7 +4,7 @@ const globalCss = defineGlobalStyles({
     'html, body': {
         color: 'gray.900',
         lineHeight: '1.5',
-        bg: 'gray'
+        bg: 'gray',
     },
 })
 
