@@ -1,4 +1,12 @@
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
+
+const globalCss = defineGlobalStyles({
+    'html, body': {
+        color: 'gray.900',
+        lineHeight: '1.5',
+        bg: 'gray'
+    },
+})
 
 export default defineConfig({
     jsxFramework: 'qwik',
@@ -19,4 +27,5 @@ export default defineConfig({
 
     // The output directory for your css system
     outdir: 'src/styled-system',
+    globalCss,
 })
