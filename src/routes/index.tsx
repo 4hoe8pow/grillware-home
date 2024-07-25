@@ -12,36 +12,11 @@ export default component$(() => {
                 Happy coding.
             </div>
             <WindowComponent
-                title="Another Window"
-                body="Different content here."
+                title={'Hello'}
+                body={
+                    'Welcome to Grillware! We are delighted to have you here.'
+                }
             />
-            <div class="window-body">
-                <menu role="tablist">
-                    <li role="tab" aria-selected="true">
-                        <a href="#tabs">Desktop</a>
-                    </li>
-                    <li role="tab">
-                        <a href="#tabs">My computer</a>
-                    </li>
-                    <li role="tab">
-                        <a href="#tabs">Control panel</a>
-                    </li>
-                    <li role="tab">
-                        <a href="#tabs">Devices manager</a>
-                    </li>
-                    <li role="tab">
-                        <a href="#tabs">Hardware profiles</a>
-                    </li>
-                    <li role="tab">
-                        <a href="#tabs">Performance</a>
-                    </li>
-                </menu>
-                <div class="window" role="tabpanel">
-                    <div class="window-body">
-                        <p>the tab content</p>
-                    </div>
-                </div>
-            </div>
         </>
     )
 })

@@ -1,4 +1,5 @@
 import './global.css'
+import '98.css'
 import {
     QwikCityProvider,
     RouterOutlet,
