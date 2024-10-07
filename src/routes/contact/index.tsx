@@ -1,4 +1,4 @@
-import { component$, useStore } from '@builder.io/qwik';
+import { component$, useStore, $ } from '@builder.io/qwik';
 
 export default component$(() => {
   // フォームデータの管理
@@ -8,10 +8,33 @@ export default component$(() => {
     message: '',
   });
 
-  const handleSubmit = (event: Event) => {
+  // handleSubmit を $() でラップする
+  const handleSubmit = $(async (event: Event) => {
     event.preventDefault();
+
+    // フォームデータをログに出力（ここでバックエンドに送信する処理を追加できます）
     console.log(formState);
-  };
+
+    // Fetch API などでデータをバックエンドに送信する例
+    try {
+      const response = await fetch('/functions/contact', {
+        method: 'POST',
+        body: new URLSearchParams({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Form submitted successfully!');
+      } else {
+        console.error('Error submitting form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  });
 
   return (
     <form onSubmit$={handleSubmit}>
